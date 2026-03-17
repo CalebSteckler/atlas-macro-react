@@ -1,0 +1,12 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 20px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: #2563eb;
+}
+
