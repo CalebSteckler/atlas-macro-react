@@ -1,5 +1,5 @@
 {
-  "homepage": "/atlas-macro-frontend",
+  "homepage": "/atlas-macro-react",
   "name": "atlas-macro-frontend",
   "version": "0.1.0",
   "private": false,
@@ -17,6 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
+    "postbuild": "node -e \"require('fs').copyFileSync('build/index.html','build/404.html')\"",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",

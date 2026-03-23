@@ -8,12 +8,12 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Reports from "./pages/Reports";
 
-const basename = process.env.NODE_ENV === 'development' ? '/' : process.env.PUBLIC_URL;
-
+// GitHub Pages: must match package.json "homepage" path (e.g. /atlas-macro-react)
+const routerBasename = process.env.PUBLIC_URL?.replace(/\/$/, '') || '/';
 
 const App = () => {
   return (
-    <BrowserRouter basename={basename}>
+    <BrowserRouter basename={routerBasename}>
       <Routes>
         <Route path = "/" element = {<Layout />}>
           <Route index element={<Home />} />
