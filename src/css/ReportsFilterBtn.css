@@ -1,0 +1,27 @@
+#reports-nav-list {
+    list-style-type: none;
+    padding: 0px;
+}
+
+#reports-nav {
+    margin-bottom: 75px;
+}
+
+.btn-filter-reports {
+    background-color: var(--inactive-button-color);
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-filter-reports:hover {
+    background-color: var(--secondary-color);
+}
+
+.active-button {
+    background-color: var(--secondary-color);
+}

@@ -1,0 +1,106 @@
+/* Navigation core */
+
+#mobile-nav-button {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.slide-in {
+    animation: slide-in 0.5s ease-in-out;
+}
+
+/* utility states used by nav */
+
+.invisible {
+    visibility: hidden !important;
+}
+
+.visible {
+    visibility: visible !important;
+}
+
+/* mobile nav should not take up layout space when hidden */
+@media (max-width: 768px) {
+    #main-nav-list.invisible {
+        display: none !important;
+    }
+    #main-nav-list.visible {
+        display: block !important;
+    }
+}
+
+/* nav branding */
+
+#nav-title {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0 0 0 15px;
+    width: 100%;
+    color: #fff;
+}
+
+#logo {
+    width: 40px;
+    max-width: 40px;
+    margin-left: 10px;
+    padding: 0;
+}
+
+/* nav list/link styling */
+
+#main-nav li {
+    text-align: right;
+    margin-right: 50px;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#main-nav li:hover {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+}
+
+#main-nav ul {
+    list-style-type: none;
+}
+
+#main-nav a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#main-nav {
+    background-color: var(--main-color);
+    padding: 0px;
+}
+
+/* desktop layout for nav */
+
+@media (min-width: 786px) {
+    #main-nav {
+        display: flex;
+        align-items: center;
+        height: 75px;
+    }
+
+    #main-nav ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: right;
+        width: auto;
+        margin-left: auto;
+    }
+}

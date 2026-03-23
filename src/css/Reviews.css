@@ -1,0 +1,12 @@
+#customer-review {
+    background-color: var(--secondary-color);
+    border: 2px solid white;
+    border-radius: 80px;
+
+    /* wide pill centered like screenshot */
+    width: calc(100% - 40px);
+    max-width: 1400px;
+    margin: 75px auto;
+    padding: 0;
+    box-sizing: border-box;
+}

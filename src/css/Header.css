@@ -1,0 +1,13 @@
+#header-nav {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+#header {
+    width: 100%;
+    height: auto;
+    background-color: #f0f0f0;
+}

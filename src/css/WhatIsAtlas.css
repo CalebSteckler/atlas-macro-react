@@ -1,0 +1,26 @@
+#about-atlas {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+#about-atlas-text {
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+}
+
+#about-atlas-header {
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+}
+
+#about-atlas-list {
+    list-style-type: none;
+}
+
+#about-atlas-list li::before {
+    content: "\2713";
+    margin-right: 15px;
+    color: #9be59b;
+}

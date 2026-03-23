@@ -1,6 +1,61 @@
-html,
+@import url('https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap');
+
+:root {
+  --main-color: #2C3E50;
+  --secondary-color: #435d77;
+  --what-card-color: #a68a64;
+  --inactive-button-color: #8f959b;
+}
+
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--main-color);
+  font-family: 'Quantico', sans-serif;
+  color: white;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Ensure all elements and form controls use Quantico */
+*,
+*::before,
+*::after {
+  font-family: 'Quantico', sans-serif;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (min-width: 786px) { 
+  .columns {
+      display: flex;
+  }
+
+  .half {
+      flex: .5;
+  }
+
+  .one {
+      flex: 1;
+  }
+
+  .two {
+      flex: 2;
+  }
+
+  .three {
+      flex: 3;
+      
+  }
+
+  .four {
+      flex: 4;
+  }
+
+}

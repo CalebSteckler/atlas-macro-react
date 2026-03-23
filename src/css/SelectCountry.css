@@ -1,0 +1,138 @@
+#btn-select-country {
+    background: rgba(33, 158, 188, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    border: 3px solid var(--main-color);
+
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Quantico', sans-serif;
+
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+/* input element for country search */
+#search-country {
+    height: 20px;
+    width: 325px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px;
+    font-size: 16px;
+}
+
+/* suggestions dropdown under the hero search */
+.suggestions {
+    position: absolute;
+    top: calc(30% + 50px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 341px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+}
+
+.suggestions.open {
+    display: block;
+}
+
+.suggestion {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+.suggestion:hover,
+.suggestion.active {
+    background-color: #f0f0f0;
+}
+
+.suggestion img {
+    width: 30px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.suggestion .name {
+    flex: 1;
+}
+
+/* modal used by the hero flow */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+}
+
+.modal h2 {
+    color: black;
+}
+
+.fred-data {
+    color: black;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Tablet/mobile: center the select-country UI over the hero */
+@media (max-width: 1024px) {
+    #btn-select-country {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #search-country {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80vw;
+        max-width: 325px;
+    }
+
+    .suggestions {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80vw;
+        max-width: 341px;
+    }
+}

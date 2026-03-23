@@ -1,0 +1,32 @@
+#reports-list {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+    justify-items: center;
+    margin-bottom: 75px;
+}
+
+.active-button {
+    background-color: var(--secondary-color);
+}
+
+/* Responsive (desktop) rules affecting Reports page */
+@media (min-width: 786px) {
+    #reports-nav-list {
+        display: flex;
+        list-style: none;
+        width: 100%;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    #reports-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+    }
+}

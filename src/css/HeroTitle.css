@@ -1,0 +1,24 @@
+#hero-title {
+    position: relative;
+    width: 100%;
+}
+
+#hero-title-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#hero-title-text {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+    font-size: clamp(2rem, 6vw, 65px);
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: 'Quantico', sans-serif;
+}

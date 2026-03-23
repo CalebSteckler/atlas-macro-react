@@ -1,0 +1,43 @@
+#contact-content {
+    text-align: center;
+    padding-bottom: 48px;
+}
+
+#contact-info {
+    width: min(680px, calc(100% - 40px));
+    margin: 18px auto 0;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    padding: 18px 20px;
+    box-sizing: border-box;
+}
+
+#contact-info-header {
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+    margin: 0 0 16px 0;
+    font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+}
+
+.contact-info-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1rem;
+    margin: 6px 0;
+}
+
+.contact-info-label {
+    text-decoration: underline;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.contact-info-row p {
+    margin: 0;
+}
