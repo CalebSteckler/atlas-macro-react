@@ -1,20 +1,23 @@
 {
   "files": {
-    "main.css": "/atlas-macro-react/static/css/main.31cd739f.css",
-    "main.js": "/atlas-macro-react/static/js/main.2126351f.js",
+    "main.css": "/atlas-macro-react/static/css/main.43f040a3.css",
+    "main.js": "/atlas-macro-react/static/js/main.67da6eb9.js",
     "static/media/hero-image.png": "/atlas-macro-react/static/media/hero-image.8ad60f2f8105b4cdc8cd.png",
+    "static/media/about-header-banner.png": "/atlas-macro-react/static/media/about-header-banner.22f7ef192c994e3ebbcc.png",
     "static/media/report-icon.png": "/atlas-macro-react/static/media/report-icon.a42583fd699478380742.png",
     "static/media/team-photo.png": "/atlas-macro-react/static/media/team-photo.e0c8053daba9ab6c6d34.png",
     "static/media/crypto-logo.png": "/atlas-macro-react/static/media/crypto-logo.3d52b0a1102ca38293e5.png",
     "static/media/AI-logo.png": "/atlas-macro-react/static/media/AI-logo.b456872504645f39a9bb.png",
     "static/media/interest-logo.png": "/atlas-macro-react/static/media/interest-logo.8be4b7dd482e9b8417e8.png",
+    "static/media/Steckler-Caleb-Composite-Spring-2024-transformed.jpeg": "/atlas-macro-react/static/media/Steckler-Caleb-Composite-Spring-2024-transformed.15a83b21590b9cdfa35e.jpeg",
+    "static/media/Steckler-Caleb-Composite-Spring-2024.jpg": "/atlas-macro-react/static/media/Steckler-Caleb-Composite-Spring-2024.9d8991937f6a353db416.jpg",
     "static/media/customer-headshot.png": "/atlas-macro-react/static/media/customer-headshot.06eb475b0b907590e455.png",
     "index.html": "/atlas-macro-react/index.html",
-    "main.31cd739f.css.map": "/atlas-macro-react/static/css/main.31cd739f.css.map",
-    "main.2126351f.js.map": "/atlas-macro-react/static/js/main.2126351f.js.map"
+    "main.43f040a3.css.map": "/atlas-macro-react/static/css/main.43f040a3.css.map",
+    "main.67da6eb9.js.map": "/atlas-macro-react/static/js/main.67da6eb9.js.map"
   },
   "entrypoints": [
-    "static/css/main.31cd739f.css",
-    "static/js/main.2126351f.js"
+    "static/css/main.43f040a3.css",
+    "static/js/main.67da6eb9.js"
   ]
 }
