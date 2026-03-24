@@ -1,5 +1,15 @@
+#contact-content {
+    text-align: center;
+    padding-bottom: 48px;
+}
+
+#form-container {
+    justify-content: center;
+    padding: 30px 20px 10px;
+}
+
 #form-section {
-    width: 100%;
+    width: auto;
     display: flex;
     justify-content: center;
     padding: 30px 20px 10px;

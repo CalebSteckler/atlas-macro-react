@@ -7,8 +7,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Reports from "./pages/Reports";
+import Dashboard from "./pages/Dashboard";
 
-// GitHub Pages: must match package.json "homepage" path (e.g. /atlas-macro-react)
 const routerBasename = process.env.PUBLIC_URL?.replace(/\/$/, '') || '/';
 
 const App = () => {
@@ -19,7 +19,8 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="reports" element={<Reports />} />
-          <Route path="contact" element={<Contact />} />   
+          <Route path="contact" element={<Contact />} />
+          <Route path="dashboard/:iso2" element={<Dashboard />} /> 
         </Route>
       </Routes>
     </BrowserRouter>

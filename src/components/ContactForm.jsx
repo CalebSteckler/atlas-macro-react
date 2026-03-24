@@ -1,31 +1,53 @@
 import "../css/ContactForm.css";
+import React from "react";
+import { useState } from "react";
 
 const ContactForm = () => {
-    return (
-        <section id="form-section">
-            <form id="contact-form" method="POST">
-                <h2 id="contact-form-title">Send us a message</h2>
+    const [result, setResult] = useState("");
+    const [feedback, setFeedback] = useState("");
 
-                <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <input id="name" type="text" name="name" required />
-                </div>
+    const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+    formData.append("access_key", "d080bb63-f8bc-4702-a733-328fd36babfc");
 
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input id="email" type="email" name="email" required />
-                </div>
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
 
-                <div className="form-group">
-                    <label htmlFor="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
+    const data = await response.json();
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      setResult("Error");
+    }
+  };
 
-                <button type="submit" id="submit-button">Submit</button>
+  return (
+    <div id='form-container'>
+        <section className="form-section">
+            <form onSubmit={onSubmit} id="contact-form">
+                <p className="form-group">
+                    <label className="">Label</label>
+                    <input type="text" name="name" className="" required/>
+                </p>
+                <p className="form-group">
+                    <label className="">Email</label>
+                    <input type="email" name="email" className="form-control" required/>
+                </p>
+                <p className="form-group">
+                    <label className="">Message</label>
+                    <textarea name="message" className="form-control" required></textarea>
+                </p>
+                <button type="submit" id="submit-button">Submit Form</button>
+                <span>{result}</span>
             </form>
-            <div id="form-result"></div>
         </section>
-    );
+    </div>
+  );
 };
 
 export default ContactForm;

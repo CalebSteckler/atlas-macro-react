@@ -1,0 +1,17 @@
+#next {
+    font-size: 50px;
+    color: red;
+}
+
+#slideshow-image {
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    position: relative;
+}
+
+#prev {
+    position: absolute;
+    left: 0px;
+    font-size: 50px;
+}
