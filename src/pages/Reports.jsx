@@ -5,33 +5,41 @@ import ReportsFilterBtn from "../components/ReportsFilterBtn";
 import ReportCard from "../components/ReportCard";
 import reportIcon from "../images/report-icon.png";
 import ReportsBottomNav from "../components/ReportsBottomNav";
+import axios from "axios";
+import { useState, useEffect } from "react";
+
 
 const Reports = () => {
+
+    const [reports, setReports] = useState([]);
+
+
+    //after the page has loaded
+    useEffect(() => {
+        const loadReports = async () => {
+            const response = await axios.get('https://atlas-macro-backend.onrender.com/api/reports');
+            setReports(response.data);
+        };
+
+        loadReports();
+
+    }, []);
+
     return (
         <main id="reports-content">
             <HeroTitle title="Reports" />
             <ReportsFilterBtn />
             <section id="reports-list">
-                <ReportCard 
-                img={reportIcon}
-                title="Report 1"
-                author="John Doe"
-                description="This is a description of the report."/>
-                <ReportCard 
-                img={reportIcon}
-                title="Report 1"
-                author="John Doe"
-                description="This is a description of the report."/>
-                <ReportCard 
-                img={reportIcon}
-                title="Report 1"
-                author="John Doe"
-                description="This is a description of the report."/>
-                <ReportCard 
-                img={reportIcon}
-                title="Report 1"
-                author="John Doe"
-                description="This is a description of the report."/>
+                {reports.map((report, idx) => (
+                    <ReportCard
+                        key={report.id}
+                        img={reportIcon}
+                        title={report.title}
+                        author={report.author}
+                        description={report.description}
+                    />
+                ))}
+                
             </section>
             <ReportsBottomNav />
         </main>
