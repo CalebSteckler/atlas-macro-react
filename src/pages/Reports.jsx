@@ -7,11 +7,20 @@ import reportIcon from "../images/report-icon.png";
 import ReportsBottomNav from "../components/ReportsBottomNav";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import AddReport from "../components/AddReport";
 
 
 const Reports = () => {
 
     const [reports, setReports] = useState([]);
+    const [showAddReport, setShowAddReport] = useState(false);
+
+    const openAddReport = () => {
+        setShowAddReport(true);
+    };
+    const closeAddReport = () => {
+        setShowAddReport(false);
+    };
 
 
     //after the page has loaded
@@ -29,6 +38,8 @@ const Reports = () => {
         <main id="reports-content">
             <HeroTitle title="Reports" />
             <ReportsFilterBtn />
+            <button id="add-report-button" onClick={openAddReport}>Add Report</button>
+            {showAddReport && <AddReport onClose={closeAddReport} />}
             <section id="reports-list">
                 {reports.map((report, idx) => (
                     <ReportCard
