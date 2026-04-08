@@ -13,7 +13,7 @@ const Navigation = () => {
 
     return (
         <div id="main-nav">
-            <img id="logo"src={logo} alt="Atlas Macro Logo"/>
+            <a href="/atlas-macro-react/"><img id="logo"src={logo} alt="Atlas Macro Logo"/></a>
             <h1 id="nav-title">Atlas Macro</h1>
             <ul id="main-nav-list" className={menuOpen ? "columns": "invisible"}>
                 <li><a href="/atlas-macro-react/">Home</a></li>
