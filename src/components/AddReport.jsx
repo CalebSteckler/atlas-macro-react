@@ -1,32 +1,49 @@
 import "../css/AddReport.css";
 import { useState } from "react";
 
-const AddReport = ({ onClose }) => {
+const AddReport = ({ closeAddDialog, addReportToList }) => {
 
     const [result, setResult] = useState("");
     const [prevSrc, setPrevSrc] = useState("");
 
     const uploadImage = (e) => {
-        e.preventDefault();
-        setPrevSrc(URL.createObjectURL(e.target.files[0]))
+        setPrevSrc(URL.createObjectURL(e.target.files[0]));
     };
 
-    const addReportToServer = (e) => {
+    const addReportToServer = async(e) => {
         e.preventDefault();
-        console.log("Report added to server");
         
-        setResult("Sending to server...");
-        const formData = new FormData(e.currentTarget);
+        setResult("Sending...");
+
+        // Same method as professor example: FormData(e.target)
+        const formData = new FormData(e.target);
         console.log(...formData);
 
-        setResult("Report sent to server");
-        onClose();
+        const postURLLocal = "http://localhost:3001/api/reports";
+        const postURLRender = "https://atlas-macro-backend.onrender.com/api/reports";
+
+        // Simple switch: change this one line
+        const useLocal = true;
+
+        const response = await fetch(useLocal ? postURLLocal : postURLRender, {
+            method: "POST",
+            body: formData,
+        });
+
+        // Match professor pattern (== 200, then close + add JSON result)
+        if (response.status == 200) {
+            setResult("Report Added");
+            closeAddDialog();
+            addReportToList(await response.json());
+        } else {
+            setResult("Error adding report");
+        }
     };
 
     return (
-        <div className="add-report-backdrop" onClick={onClose}>
+        <div className="add-report-backdrop" onClick={closeAddDialog}>
             <div className="add-report-modal" onClick={(e) => e.stopPropagation()}>
-                <button className="add-report-close" type="button" onClick={onClose}>
+                <button className="add-report-close" type="button" onClick={closeAddDialog}>
                     &times;
                 </button>
                 <form onSubmit={addReportToServer}>
@@ -43,7 +60,7 @@ const AddReport = ({ onClose }) => {
 
                 <p>
                     <label>Report Description:</label>
-                    <input type="text" name="description" id="description" required></input>
+                    <textarea name="description" id="description" required></textarea>
                 </p>
 
                 <p>
@@ -53,11 +70,17 @@ const AddReport = ({ onClose }) => {
 
                 <section>
                     <p id="img-prev-section">
-                        {prevSrc && <img src={prevSrc} alt="Report Image" />}
+                        {prevSrc=="" ? ("") : (<img id="img-prev" src={prevSrc} alt="" />)}
                     </p>
                     <p>
                         <label>Report Image:</label>
-                        <input type="file" name="image" id="image" accept="image/*" ></input>
+                        <input
+                            type="file"
+                            name="image"
+                            id="image"
+                            accept="image/*"
+                            onChange={uploadImage}
+                        ></input>
                     </p>
                 </section>
                 <p>
@@ -72,8 +95,8 @@ const AddReport = ({ onClose }) => {
 
                 <p>
                     <button type="submit">Submit</button>
-                    <span>{result}</span>
                 </p>
+                <p>{result}</p>
                 </form>
             </div>
         </div>
