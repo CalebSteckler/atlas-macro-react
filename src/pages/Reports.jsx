@@ -13,13 +13,46 @@ import AddReport from "../components/AddReport";
 const Reports = () => {
 
     const [reports, setReports] = useState([]);
-    const [showAddDialog, setShowAddDialog] = useState(false);
+    const [showDialog, setShowDialog] = useState(false);
+    const [dialogMode, setDialogMode] = useState("add"); // "add" | "edit" | "delete"
+    const [activeReport, setActiveReport] = useState(null);
+    const [actionMessage, setActionMessage] = useState("");
 
-    const openAddDialog = () => setShowAddDialog(true);
-    const closeAddDialog = () => setShowAddDialog(false);
+    const openAddDialog = () => {
+        setDialogMode("add");
+        setActiveReport(null);
+        setShowDialog(true);
+    };
+
+    const openEditDialog = (report) => {
+        setDialogMode("edit");
+        setActiveReport(report);
+        setShowDialog(true);
+    };
+
+    const openDeleteDialog = (report) => {
+        setDialogMode("delete");
+        setActiveReport(report);
+        setShowDialog(true);
+    };
+
+    const closeDialog = () => {
+        setShowDialog(false);
+        setActiveReport(null);
+    };
 
     const addReportToList = (report) => {
         setReports((reports) => [...reports, report]);
+    };
+
+    const updateReportInList = (updated) => {
+        setReports((reports) =>
+            reports.map((r) => (r._id === updated._id ? updated : r))
+        );
+    };
+
+    const removeReportFromList = (deleted) => {
+        setReports((reports) => reports.filter((r) => r._id !== deleted._id));
     };
 
 
@@ -30,7 +63,7 @@ const Reports = () => {
             const renderLink = "https://atlas-macro-backend.onrender.com/api/reports";
 
             // Simple switch: set this to false to use Render
-            const useLocal = true;
+            const useLocal = false;
 
             const response = await axios.get(useLocal ? localLink : renderLink);
             setReports(response.data);
@@ -44,20 +77,32 @@ const Reports = () => {
         <main id="reports-content">
             <HeroTitle title="Reports" />
             <ReportsFilterBtn openAddDialog={openAddDialog} />
-            {showAddDialog ? (
+            {showDialog ? (
                 <AddReport
-                    closeAddDialog={closeAddDialog}
-                    addReportToList={addReportToList}
+                    mode={dialogMode}
+                    report={activeReport}
+                    closeAddDialog={closeDialog}
+                    addReportToList={
+                        dialogMode === "add"
+                            ? addReportToList
+                            : dialogMode === "edit"
+                                ? updateReportInList
+                                : removeReportFromList
+                    }
+                    setActionMessage={setActionMessage}
                 />
             ) : ("")}
             <section id="reports-list">
                 {reports.map((report, idx) => (
                     <ReportCard
                         key={report.id ?? report._id ?? idx}
+                        report={report}
                         img={reportIcon}
                         title={report.title}
                         author={report.author}
                         description={report.description}
+                        openEditDialog={openEditDialog}
+                        openDeleteDialog={openDeleteDialog}
                     />
                 ))}
                 

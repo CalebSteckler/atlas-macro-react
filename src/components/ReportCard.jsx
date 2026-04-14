@@ -3,8 +3,26 @@ import { useState } from "react";
 
 const ReportCard = (props) => {
     const [open, setOpen] = useState(false);
-    const response = `https://atlas-macro-backend.onrender.com/image/${props.img}`;
-    const localImageLink = `http://localhost:5000/api/reports/image/${props.img}`;
+
+    const updateReport = (report) => {
+        //setReport(report);
+    }
+
+    const showReportDetails = () => {
+
+    }
+
+    const deleteReport = () => {
+        setOpen(false);
+        props.openDeleteDialog?.(props.report);
+    }
+
+    const editReport = () => {
+        setOpen(false);
+        props.openEditDialog?.(props.report);
+    };
+
+    
 
     return (
         <>
@@ -21,7 +39,9 @@ const ReportCard = (props) => {
                     className="report-card-modal-backdrop"
                     onClick={() => setOpen(false)}
                 >
-                    <div className="report-card-modal">
+                    <div className="report-card-modal" onClick={(e) => e.stopPropagation()}>
+                        <button id="delete-report-button" type="button" onClick={deleteReport}>Delete Report</button>
+                        <button id="edit-report-button" type="button" onClick={editReport}>Edit Report</button>
                         <h2>{props.title}</h2>
                         <p>{props.author}</p>
                         <p>{props.description}</p>
