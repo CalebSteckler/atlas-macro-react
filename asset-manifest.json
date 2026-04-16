@@ -1,10 +1,9 @@
 {
   "files": {
     "main.css": "/atlas-macro-react/static/css/main.4782b1ad.css",
-    "main.js": "/atlas-macro-react/static/js/main.801aca12.js",
+    "main.js": "/atlas-macro-react/static/js/main.4a9d6766.js",
     "static/media/hero-image.png": "/atlas-macro-react/static/media/hero-image.8ad60f2f8105b4cdc8cd.png",
     "static/media/about-header-banner.png": "/atlas-macro-react/static/media/about-header-banner.22f7ef192c994e3ebbcc.png",
-    "static/media/report-icon.png": "/atlas-macro-react/static/media/report-icon.a42583fd699478380742.png",
     "static/media/team-photo.png": "/atlas-macro-react/static/media/team-photo.e0c8053daba9ab6c6d34.png",
     "static/media/crypto-logo.png": "/atlas-macro-react/static/media/crypto-logo.3d52b0a1102ca38293e5.png",
     "static/media/AI-logo.png": "/atlas-macro-react/static/media/AI-logo.b456872504645f39a9bb.png",
@@ -14,10 +13,10 @@
     "static/media/customer-headshot.png": "/atlas-macro-react/static/media/customer-headshot.06eb475b0b907590e455.png",
     "index.html": "/atlas-macro-react/index.html",
     "main.4782b1ad.css.map": "/atlas-macro-react/static/css/main.4782b1ad.css.map",
-    "main.801aca12.js.map": "/atlas-macro-react/static/js/main.801aca12.js.map"
+    "main.4a9d6766.js.map": "/atlas-macro-react/static/js/main.4a9d6766.js.map"
   },
   "entrypoints": [
     "static/css/main.4782b1ad.css",
-    "static/js/main.801aca12.js"
+    "static/js/main.4a9d6766.js"
   ]
 }
