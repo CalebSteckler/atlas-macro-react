@@ -3,7 +3,6 @@ import "../css/Reports.css";
 import HeroTitle from "../components/HeroTitle";
 import ReportsFilterBtn from "../components/ReportsFilterBtn";
 import ReportCard from "../components/ReportCard";
-import reportIcon from "../images/report-icon.png";
 import ReportsBottomNav from "../components/ReportsBottomNav";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -97,7 +96,7 @@ const Reports = () => {
                     <ReportCard
                         key={report.id ?? report._id ?? idx}
                         report={report}
-                        img={reportIcon}
+                        img={`https://atlas-macro-backend.onrender.com/${report.image}`}
                         title={report.title}
                         author={report.author}
                         description={report.description}
