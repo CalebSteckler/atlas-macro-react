@@ -13,7 +13,7 @@ const Reports = () => {
 
     const [reports, setReports] = useState([]);
     const [showDialog, setShowDialog] = useState(false);
-    const [dialogMode, setDialogMode] = useState("add"); // "add" | "edit" | "delete"
+    const [dialogMode, setDialogMode] = useState("add"); 
     const [activeReport, setActiveReport] = useState(null);
     const [actionMessage, setActionMessage] = useState("");
 
@@ -61,7 +61,6 @@ const Reports = () => {
             const localLink = "http://localhost:3001/api/reports";
             const renderLink = "https://atlas-macro-backend.onrender.com/api/reports";
 
-            // Simple switch: set this to false to use Render
             const useLocal = false;
 
             const response = await axios.get(useLocal ? localLink : renderLink);

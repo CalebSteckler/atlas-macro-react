@@ -35,14 +35,12 @@ const AddReport = ({ mode = "add", report, closeAddDialog, addReportToList, setA
         
         setResult("Sending...");
 
-        // Same method as professor example: FormData(e.target)
         const formData = new FormData(e.target);
         console.log(...formData);
 
         const baseLocal = "http://localhost:3001/api/reports";
         const baseRender = "https://atlas-macro-backend.onrender.com/api/reports";
 
-        // Simple switch: change this one line
         const useLocal = false;
 
         const baseUrl = useLocal ? baseLocal : baseRender;
@@ -64,7 +62,6 @@ const AddReport = ({ mode = "add", report, closeAddDialog, addReportToList, setA
             body: mode === "delete" ? undefined : formData,
         });
 
-        // Match professor pattern (== 200, then close + add JSON result)
         if (response.status == 200) {
             setResult(mode === "edit" ? "Report Updated" : mode === "delete" ? "Report Deleted" : "Report Added");
             closeAddDialog();
